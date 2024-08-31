@@ -12,4 +12,5 @@ import { ESLintUtils } from '@typescript-eslint/utils'
 export const createEslintRule = ESLintUtils.RuleCreator<{
   description: string
   recommended: string
+  url: string
 }>((ruleName) => ruleName)

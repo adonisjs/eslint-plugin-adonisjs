@@ -22,6 +22,7 @@ export default createEslintRule({
     docs: {
       description: '(Needed for HMR) Prefer lazy listener import over standard import',
       recommended: 'recommended',
+      url: 'https://github.com/adonisjs/eslint-plugin-adonisjs/tree/v2.0.0-beta.0?tab=readme-ov-file#prefer-lazy-listener-import',
     },
     schema: [],
     messages: {

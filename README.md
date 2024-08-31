@@ -56,6 +56,9 @@ export default [
 
 ## `prefer-lazy-controller-import`
 
+> [!IMPORTANT]
+> The HMR mode of AdonisJS only works with Lazy loaded controllers
+
 The `@adonisjs/prefer-lazy-controller-import` rule complains when you import a controller using the import expression and assign it to a route. For example:
 
 ```ts
@@ -78,6 +81,9 @@ router.get('users', [UsersController, 'index'])
 ```
 
 ## `prefer-lazy-listener-import`
+
+> [!IMPORTANT]
+> The HMR mode of AdonisJS only works with Lazy loaded event listeners
 
 The `@adonisjs/prefer-lazy-listener-import` rule complains when you import an event listener using the import expression and assign it to an event. For example:
 
