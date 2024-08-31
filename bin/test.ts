@@ -1,6 +1,5 @@
 import { test } from '@japa/runner'
 import { assert } from '@japa/assert'
-import { fileURLToPath } from 'node:url'
 import { RuleTester } from '@typescript-eslint/rule-tester'
 import { configure, processCLIArgs, run } from '@japa/runner'
 
@@ -41,7 +40,7 @@ configure({
   importer(filePath) {
     currentDepth = 0
     originalTitle = null
-    return import(fileURLToPath(filePath))
+    return import(filePath.href)
   },
 })
 
