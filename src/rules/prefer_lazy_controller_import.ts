@@ -24,7 +24,7 @@ export default createEslintRule({
     docs: {
       description: '(Needed for HMR) Prefer lazy controller import over standard import',
       recommended: 'recommended',
-      url: 'https://github.com/adonisjs/eslint-plugin-adonisjs/tree/v2.0.0-beta.0?tab=readme-ov-file#prefer-lazy-controller-import',
+      url: 'https://github.com/adonisjs/eslint-plugin-adonisjs?tab=readme-ov-file#prefer-lazy-controller-import',
     },
     schema: [],
     messages: {
