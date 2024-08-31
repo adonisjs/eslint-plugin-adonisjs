@@ -10,6 +10,7 @@
     "!build/bin",
     "!build/tests"
   ],
+  "main": "build/index.js",
   "exports": {
     ".": "./build/index.js"
   },
@@ -51,6 +52,14 @@
   "dependencies": {
     "@typescript-eslint/utils": "^8.3.0"
   },
+  "homepage": "https://github.com/adonisjs/eslint-plugin-adonisjs#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adonisjs/eslint-plugin-adonisjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adonisjs/eslint-plugin-adonisjs/issues"
+  },
   "keywords": [
     "eslint",
     "adonisjs",
@@ -58,7 +67,10 @@
   ],
   "author": "Julien Ripouteau <julien@ripouteau.com>",
   "contributors": [
-    "Harminder Virk <virk@adonisjs.com>"
+    {
+      "name": "Harminder Virk",
+      "email": "virk@adonisjs.com"
+    }
   ],
   "license": "MIT",
   "publishConfig": {
