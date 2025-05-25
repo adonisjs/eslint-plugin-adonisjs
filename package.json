@@ -91,7 +91,7 @@
     "clean": true,
     "format": "esm",
     "dts": false,
-    "sourcemap": true,
+    "sourcemap": false,
     "target": "esnext"
   },
   "release-it": {
