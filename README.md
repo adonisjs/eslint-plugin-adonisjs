@@ -123,6 +123,23 @@ import { Link } from '@inertiajs/react'
 import { Link } from '@adonisjs/inertia/react'
 ```
 
+## `prefer-adonisjs-inertia-form`
+
+> [!NOTE]
+> This rule is for AdonisJS 7+ projects using `@adonisjs/inertia` v4+. You must enable it manually.
+
+The `@adonisjs/prefer-adonisjs-inertia-form` rule warns when you import the `Form` component from `@inertiajs/react` or `@inertiajs/vue3` instead of using the typesafe version from `@adonisjs/inertia`.
+
+```ts
+// ❌ Warning: Prefer importing Form from @adonisjs/inertia/react for typesafe routing
+import { Form } from '@inertiajs/react'
+```
+
+```ts
+// ✅ Correct
+import { Form } from '@adonisjs/inertia/react'
+```
+
 ## `no-backend-import-in-frontend`
 
 The `@adonisjs/no-backend-import-in-frontend` rule prevents importing backend code in your frontend files located in the `inertia/` directory.
