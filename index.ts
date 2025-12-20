@@ -9,10 +9,12 @@
 
 import preferLazyListenerImport from './src/rules/prefer_lazy_listener_import.js'
 import preferLazyControllerImport from './src/rules/prefer_lazy_controller_import.js'
+import preferAdonisInertiaLink from './src/rules/prefer_adonisjs_inertia_link.js'
 
 export default {
   rules: {
     'prefer-lazy-controller-import': preferLazyControllerImport,
     'prefer-lazy-listener-import': preferLazyListenerImport,
+    'prefer-adonisjs-inertia-link': preferAdonisInertiaLink,
   },
 }

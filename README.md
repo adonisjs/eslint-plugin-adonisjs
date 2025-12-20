@@ -106,6 +106,23 @@ const SendVerificationEmail = () => import('#listeners/send_verification_email')
 emitter.on('user:created', [SendVerificationEmail, 'handle'])
 ```
 
+## `prefer-adonisjs-inertia-link`
+
+> [!NOTE]
+> This rule is for AdonisJS 7+ projects using `@adonisjs/inertia` v4+.
+
+The `@adonisjs/prefer-adonisjs-inertia-link` rule warns when you import the `Link` component from `@inertiajs/react` or `@inertiajs/vue3` instead of using the typesafe version from `@adonisjs/inertia`.
+
+```ts
+// ❌ Warning: Prefer importing Link from @adonisjs/inertia/react for typesafe routing
+import { Link } from '@inertiajs/react'
+```
+
+```ts
+// ✅ Correct
+import { Link } from '@adonisjs/inertia/react'
+```
+
 <div align="center">
   <sub>Built with ❤︎ by <a href="https://github.com/Julien-R44">Julien Ripouteau</a> and <a href="https://github.com/thetutlage">Harminder Virk</a>
 </div>
