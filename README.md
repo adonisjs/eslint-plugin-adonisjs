@@ -123,6 +123,68 @@ import { Link } from '@inertiajs/react'
 import { Link } from '@adonisjs/inertia/react'
 ```
 
+## `no-backend-import-in-frontend`
+
+The `@adonisjs/no-backend-import-in-frontend` rule prevents importing backend code in your frontend files located in the `inertia/` directory.
+
+The rule detects both:
+
+- **Subpath imports** (`#models/user`) - automatically reads your `package.json` imports field
+- **Relative imports** (`../../app/models/user`) - checks if the resolved path is outside `inertia/`
+
+```ts
+// inertia/pages/users.tsx
+
+// ❌ Error: Importing backend code in frontend files is not allowed
+import User from '#models/user'
+import { UserService } from '../../app/services/user_service'
+```
+
+```ts
+// inertia/pages/users.tsx
+
+// ✅ Correct - type-only imports are allowed
+import type { User } from '#models/user'
+import type { UserService } from '../../app/services/user_service'
+
+// ✅ Correct - imports pointing to inertia/ are allowed
+import { Button } from '#components/button' // if #components/* -> ./inertia/components/*
+import { utils } from '../utils'
+```
+
+### Sharing code between frontend and backend
+
+If you have shared code (e.g., enums, constants, utility types) in your backend that you want to import in your frontend, you can use the `allowed` option to whitelist specific paths:
+
+```ts
+// eslint.config.js
+export default [
+  {
+    rules: {
+      '@adonisjs/no-backend-import-in-frontend': [
+        'error',
+        {
+          allowed: [
+            '#shared/*', // allows #shared/enums, #shared/constants, etc.
+            '#shared/**', // allows #shared/utils/helpers (deep nested)
+            '#enums', // exact match
+          ],
+        },
+      ],
+    },
+  },
+]
+```
+
+The `allowed` option uses [micromatch](https://github.com/micromatch/micromatch) for glob pattern matching.
+
+```ts
+// inertia/pages/users.tsx
+
+// ✅ Correct - #shared/* is in the allowed list
+import { UserStatus } from '#shared/enums'
+```
+
 <div align="center">
   <sub>Built with ❤︎ by <a href="https://github.com/Julien-R44">Julien Ripouteau</a> and <a href="https://github.com/thetutlage">Harminder Virk</a>
 </div>
